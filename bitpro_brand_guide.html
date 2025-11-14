@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitPro Global Software - Brand Identity Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+
+        .cover {
+            height: 100vh;
+            background: linear-gradient(135deg, #1e4d5f 0%, #2d7a92 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .cover-logo {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .cover-logo-icon {
+            width: 70%;
+            height: 70%;
+            background: #1e4d5f;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .cover-logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 35%;
+            height: 35%;
+            background: white;
+            left: 20%;
+            top: 20%;
+            border-radius: 4px;
+        }
+
+        .cover h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .cover p {
+            font-size: 24px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .cover .subtitle {
+            font-size: 18px;
+            opacity: 0.7;
+            margin-top: 40px;
+        }
+
+        .section {
+            padding: 80px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1e4d5f;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #1e4d5f;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Logo Variations */
+        .logo-showcase {
+            background: white;
+            border-radius: 16px;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .logo-showcase.dark {
+            background: #1a1a1a;
+        }
+
+        .logo-showcase h4 {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+        }
+
+        .logo-showcase.dark h4 {
+            color: #666;
+        }
+
+        .logo-primary {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: #1e4d5f;
+            border-radius: 16px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 35%;
+            height: 35%;
+            background: white;
+            left: 20%;
+            top: 20%;
+            border-radius: 3px;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 2px;
+            background: white;
+            left: 20%;
+            bottom: 35%;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .brand-name {
+            font-size: 56px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+        }
+
+        .logo-text .tagline {
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-top: -8px;
+        }
+
+        .logo-showcase.dark .logo-text .brand-name {
+            color: white;
+        }
+
+        .logo-showcase.dark .logo-text .tagline {
+            color: #999;
+        }
+
+        .logo-icon-white {
+            background: white;
+        }
+
+        .logo-icon-white::before {
+            background: #1e4d5f;
+        }
+
+        .logo-icon-white::after {
+            background: #1e4d5f;
+        }
+
+        /* Color Palette */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .color-swatch {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .color-display {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .color-info {
+            background: white;
+            padding: 24px;
+        }
+
+        .color-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .color-usage {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .color-values {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .color-value {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .color-value span:first-child {
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Typography */
+        .type-specimen {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .type-sample {
+            margin-bottom: 40px;
+        }
+
+        .type-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .heading-1 { font-size: 64px; font-weight: 700; line-height: 1.1; }
+        .heading-2 { font-size: 48px; font-weight: 700; line-height: 1.2; }
+        .heading-3 { font-size: 32px; font-weight: 600; line-height: 1.3; }
+        .heading-4 { font-size: 24px; font-weight: 600; line-height: 1.4; }
+        .body-large { font-size: 18px; line-height: 1.7; }
+        .body-regular { font-size: 16px; line-height: 1.6; }
+
+        /* Applications */
+        .app-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .app-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .app-preview {
+            background: #f8f9fa;
+            padding: 60px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .app-info {
+            padding: 30px;
+        }
+
+        .app-info h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #1e4d5f;
+        }
+
+        .app-info p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Business Card */
+        .business-card {
+            width: 100%;
+            aspect-ratio: 1.75;
+            background: linear-gradient(135deg, #1e4d5f 0%, #2d7a92 100%);
+            border-radius: 12px;
+            padding: 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .business-card .logo-mini {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .business-card .logo-mini::before {
+            content: '';
+            position: absolute;
+            width: 35%;
+            height: 35%;
+            background: #1e4d5f;
+            left: 20%;
+            top: 20%;
+            border-radius: 2px;
+        }
+
+        .business-card-info h5 {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .business-card-info p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .business-card-contact {
+            font-size: 13px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        /* Guidelines */
+        .guideline-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .guideline-box {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .do-item, .dont-item {
+            text-align: center;
+        }
+
+        .do-item .icon {
+            width: 100%;
+            height: 200px;
+            background: #e8f5e9;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #4caf50;
+        }
+
+        .dont-item .icon {
+            width: 100%;
+            height: 200px;
+            background: #ffebee;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #f44336;
+        }
+
+        .do-item h5 {
+            color: #4caf50;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .dont-item h5 {
+            color: #f44336;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .do-item p, .dont-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .spacing-guide {
+            background: white;
+            border-radius: 16px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .spacing-demo {
+            position: relative;
+            padding: 40px;
+        }
+
+        .spacing-line {
+            position: absolute;
+            border: 2px dashed #e53935;
+        }
+
+        @media print {
+            .section { page-break-after: always; }
+            body { background: white; }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .section { padding: 40px 20px; }
+            .cover h1 { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover">
+        <div class="cover-logo">
+            <div class="cover-logo-icon"></div>
+        </div>
+        <h1>BitPro</h1>
+        <p>Global Software</p>
+        <p class="subtitle">Brand Identity Guidelines 2025</p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="section">
+        <h2 class="section-title">Brand Overview</h2>
+        <p class="section-subtitle">BitPro is a comprehensive all-in-one business management platform combining POS, ERP, Asset Management, and enterprise solutions designed for modern businesses in the Middle East and beyond.</p>
+        
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>To empower businesses with an integrated, intelligent platform that unifies POS, ERP, asset tracking, inventory management, and financial operations into one seamless solution.</p>
+            </div>
+            <div class="card">
+                <h3>Brand Values</h3>
+                <p>Comprehensive, Integrated, Professional, Innovative, Reliable, Compliant, Enterprise-Grade, User-Focused</p>
+            </div>
+            <div class="card">
+                <h3>Target Audience</h3>
+                <p>Small to large enterprises needing integrated business management from point-of-sale to back-office operations, with focus on Middle East compliance and multi-language support.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Suite -->
+    <div class="section section-dark">
+        <h2 class="section-title">Product Suite</h2>
+        <p class="section-subtitle">A complete ecosystem of integrated business management solutions.</p>
+        
+        <div class="grid grid-4">
+            <div class="card">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1e4d5f 0%, #2d7a92 100%); border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 700;">P</div>
+                <h3>POS System</h3>
+                <p>Advanced point-of-sale with Arabic/English support, thermal printing, ZATCA e-invoicing compliance, and multi-payment methods.</p>
+            </div>
+            <div class="card">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #2d7a92 0%, #4a9bb5 100%); border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 700;">E</div>
+                <h3>ERP System</h3>
+                <p>Enterprise resource planning covering sales, purchases, inventory, accounting, HR, and comprehensive financial reporting.</p>
+            </div>
+            <div class="card">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1e4d5f 0%, #4a9bb5 100%); border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 700;">A</div>
+                <h3>Asset Management</h3>
+                <p>Complete asset tracking with device receipts, maintenance schedules, depreciation, and Excel import capabilities.</p>
+            </div>
+            <div class="card">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #2d7a92 0%, #1e4d5f 100%); border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 700;">I</div>
+                <h3>Inventory Management</h3>
+                <p>Real-time inventory tracking, barcode integration, stock alerts, transfers, and comprehensive product management.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-4" style="margin-top: 30px;">
+            <div class="card">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4a9bb5 0%, #2d7a92 100%); border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 700;">C</div>
+                <h3>Customer Management</h3>
+                <p>CRM with customer profiles, purchase history, loyalty programs, and activity tracking.</p>
+            </div>
+            <div class="card">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1e4d5f 0%, #2d7a92 100%); border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 700;">V</div>
+                <h3>Vendor Management</h3>
+                <p>Supplier database, purchase orders, payment tracking, and vendor performance analytics.</p>
+            </div>
+            <div class="card">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #2d7a92 0%, #4a9bb5 100%); border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 700;">F</div>
+                <h3>Financial Reporting</h3>
+                <p>Comprehensive reports, profit/loss statements, tax compliance, ZATCA integration, and real-time analytics.</p>
+            </div>
+            <div class="card">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4a9bb5 0%, #1e4d5f 100%); border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: 700;">E</div>
+                <h3>Employee Management</h3>
+                <p>HR module with employee records, attendance, payroll integration, and performance tracking.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo System -->
+    <div class="section section-dark">
+        <h2 class="section-title">Logo System</h2>
+        <p class="section-subtitle">The BitPro logo combines a modern geometric icon with bold typography to convey professionalism and innovation.</p>
+        
+        <div class="grid grid-2" style="margin-bottom: 40px;">
+            <div class="logo-showcase">
+                <h4>Primary Logo</h4>
+                <div class="logo-primary">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">
+                        <span class="brand-name">BitPro</span>
+                        <span class="tagline">GLOBAL SOFTWARE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-showcase dark">
+                <h4>Logo on Dark</h4>
+                <div class="logo-primary">
+                    <div class="logo-icon-white"></div>
+                    <div class="logo-text">
+                        <span class="brand-name">BitPro</span>
+                        <span class="tagline">GLOBAL SOFTWARE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="logo-showcase">
+                <h4>Icon Only</h4>
+                <div class="logo-icon" style="width: 120px; height: 120px; border-radius: 24px;"></div>
+            </div>
+            <div class="logo-showcase">
+                <h4>Wordmark Only</h4>
+                <div class="logo-text">
+                    <span class="brand-name" style="font-size: 48px;">BitPro</span>
+                    <span class="tagline">GLOBAL SOFTWARE</span>
+                </div>
+            </div>
+            <div class="logo-showcase dark">
+                <h4>Icon on Dark</h4>
+                <div class="logo-icon-white" style="width: 120px; height: 120px; border-radius: 24px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color Palette -->
+    <div class="section">
+        <h2 class="section-title">Color Palette</h2>
+        <p class="section-subtitle">Our color system reflects professionalism, trust, and innovation.</p>
+        
+        <div class="color-grid">
+            <div class="color-swatch">
+                <div class="color-display" style="background: #1e4d5f;">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; opacity: 0.2;"></div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Deep Teal</div>
+                    <div class="color-usage">Primary Brand Color - Logos, Headers, CTAs</div>
+                    <div class="color-values">
+                        <div class="color-value"><span>HEX</span> <span>#1e4d5f</span></div>
+                        <div class="color-value"><span>RGB</span> <span>30, 77, 95</span></div>
+                        <div class="color-value"><span>CMYK</span> <span>68, 19, 0, 63</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-display" style="background: #2d7a92;">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; opacity: 0.2;"></div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Ocean Blue</div>
+                    <div class="color-usage">Secondary - Accents, Gradients</div>
+                    <div class="color-values">
+                        <div class="color-value"><span>HEX</span> <span>#2d7a92</span></div>
+                        <div class="color-value"><span>RGB</span> <span>45, 122, 146</span></div>
+                        <div class="color-value"><span>CMYK</span> <span>69, 16, 0, 43</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-display" style="background: #4a9bb5;">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; opacity: 0.2;"></div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Sky Blue</div>
+                    <div class="color-usage">Accent - Links, Icons, Highlights</div>
+                    <div class="color-values">
+                        <div class="color-value"><span>HEX</span> <span>#4a9bb5</span></div>
+                        <div class="color-value"><span>RGB</span> <span>74, 155, 181</span></div>
+                        <div class="color-value"><span>CMYK</span> <span>59, 14, 0, 29</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-display" style="background: #f8f9fa;">
+                    <div style="width: 80px; height: 80px; background: #1e4d5f; border-radius: 50%; opacity: 0.1;"></div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Light Gray</div>
+                    <div class="color-usage">Background - Surfaces, Cards</div>
+                    <div class="color-values">
+                        <div class="color-value"><span>HEX</span> <span>#f8f9fa</span></div>
+                        <div class="color-value"><span>RGB</span> <span>248, 249, 250</span></div>
+                        <div class="color-value"><span>CMYK</span> <span>1, 0, 0, 2</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-display" style="background: #1a1a1a;">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; opacity: 0.1;"></div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Carbon</div>
+                    <div class="color-usage">Text - Headings, Body Copy</div>
+                    <div class="color-values">
+                        <div class="color-value"><span>HEX</span> <span>#1a1a1a</span></div>
+                        <div class="color-value"><span>RGB</span> <span>26, 26, 26</span></div>
+                        <div class="color-value"><span>CMYK</span> <span>0, 0, 0, 90</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-display" style="background: #666666;">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; opacity: 0.2;"></div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Slate Gray</div>
+                    <div class="color-usage">Secondary Text - Captions, Labels</div>
+                    <div class="color-values">
+                        <div class="color-value"><span>HEX</span> <span>#666666</span></div>
+                        <div class="color-value"><span>RGB</span> <span>102, 102, 102</span></div>
+                        <div class="color-value"><span>CMYK</span> <span>0, 0, 0, 60</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-display" style="background: #4caf50;">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; opacity: 0.2;"></div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Success Green</div>
+                    <div class="color-usage">Success States - Confirmations</div>
+                    <div class="color-values">
+                        <div class="color-value"><span>HEX</span> <span>#4caf50</span></div>
+                        <div class="color-value"><span>RGB</span> <span>76, 175, 80</span></div>
+                        <div class="color-value"><span>CMYK</span> <span>57, 0, 54, 31</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-display" style="background: #e53935;">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; opacity: 0.2;"></div>
+                </div>
+                <div class="color-info">
+                    <div class="color-name">Alert Red</div>
+                    <div class="color-usage">Error States - Warnings, Alerts</div>
+                    <div class="color-values">
+                        <div class="color-value"><span>HEX</span> <span>#e53935</span></div>
+                        <div class="color-value"><span>RGB</span> <span>229, 57, 53</span></div>
+                        <div class="color-value"><span>CMYK</span> <span>0, 75, 77, 10</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="section section-dark">
+        <h2 class="section-title">Typography</h2>
+        <p class="section-subtitle">Inter is our primary typeface - a modern, highly legible sans-serif designed for digital interfaces.</p>
+        
+        <div class="type-specimen">
+            <div class="type-sample">
+                <div class="type-label">Heading 1 - Inter Bold 64px</div>
+                <div class="heading-1" style="color: #1e4d5f;">Empowering Business Excellence</div>
+            </div>
+
+            <div class="type-sample">
+                <div class="type-label">Heading 2 - Inter Bold 48px</div>
+                <div class="heading-2" style="color: #1e4d5f;">Comprehensive Solutions</div>
+            </div>
+
+            <div class="type-sample">
+                <div class="type-label">Heading 3 - Inter Semibold 32px</div>
+                <div class="heading-3" style="color: #1e4d5f;">Feature Highlights</div>
+            </div>
+
+            <div class="type-sample">
+                <div class="type-label">Heading 4 - Inter Semibold 24px</div>
+                <div class="heading-4" style="color: #1e4d5f;">Section Title</div>
+            </div>
+
+            <div class="type-sample">
+                <div class="type-label">Body Large - Inter Regular 18px</div>
+                <div class="body-large" style="color: #1a1a1a;">BitPro provides enterprise-grade business management software designed for modern organizations. Our comprehensive platform helps businesses streamline operations and drive growth.</div>
+            </div>
+
+            <div class="type-sample">
+                <div class="type-label">Body Regular - Inter Regular 16px</div>
+                <div class="body-regular" style="color: #666;">Supporting text and descriptions use this size for optimal readability across all devices and platforms. The Inter typeface ensures clarity at all sizes.</div>
+            </div>
+        </div>
+
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>Font Family</h3>
+                <p><strong>Primary:</strong> Inter<br>
+                Weights: Regular (400), Medium (500), Semibold (600), Bold (700)</p>
+                <p style="margin-top: 16px;"><strong>Fallback:</strong> -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif</p>
+            </div>
+            <div class="card">
+                <h3>Usage Guidelines</h3>
+                <p>• Headings: Bold/Semibold weights<br>
+                • Body text: Regular weight<br>
+                • Minimum size: 14px for body text<br>
+                • Line height: 1.5-1.7 for readability<br>
+                • Letter spacing: -0.5px for large headings</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo Guidelines -->
+    <div class="section">
+        <h2 class="section-title">Logo Usage Guidelines</h2>
+        <p class="section-subtitle">Proper logo usage ensures consistent brand recognition across all touchpoints.</p>
+        
+        <div class="spacing-guide" style="margin-bottom: 40px;">
+            <div class="spacing-demo">
+                <div class="logo-primary">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">
+                        <span class="brand-name" style="font-size: 48px;">BitPro</span>
+                        <span class="tagline">GLOBAL SOFTWARE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guideline-grid">
+            <div class="guideline-box">
+                <h3>Clear Space</h3>
+                <p>Maintain a minimum clear space around the logo equal to the height of the icon. This ensures the logo remains prominent and uncluttered.</p>
+            </div>
+            <div class="guideline-box">
+                <h3>Minimum Size</h3>
+                <p><strong>Digital:</strong> 120px width minimum<br>
+                <strong>Print:</strong> 1 inch (2.54cm) width minimum<br>
+                Use icon-only version for smaller applications.</p>
+            </div>
+            <div class="guideline-box">
+                <h3>Backgrounds</h3>
+                <p>Logo works best on white, light gray (#f8f9fa), or dark backgrounds (#1a1a1a). Ensure sufficient contrast for readability.</p>
+            </div>
+            <div class="guideline-box">
+                <h3>Color Variations</h3>
+                <p>Primary logo in brand colors. White logo for dark backgrounds. Never use gradients, outlines, or other color variations.</p>
+            </div>
+        </div>
+
+        <div class="do-dont">
+            <div class="do-item">
+                <div class="icon">
+                    <div class="logo-primary" style="transform: scale(0.5);">
+                        <div class="logo-icon"></div>
+                        <div class="logo-text">
+                            <span class="brand-name" style="font-size: 48px;">BitPro</span>
+                        </div>
+                    </div>
+                </div>
+                <h5>✓ DO</h5>
+                <p>Use official logo files with proper proportions</p>
+            </div>
+            <div class="dont-item">
+                <div class="icon">
+                    <div class="logo-primary" style="transform: scale(0.5) rotate(15deg);">
+                        <div class="logo-icon"></div>
+                        <div class="logo-text">
+                            <span class="brand-name" style="font-size: 48px;">BitPro</span>
+                        </div>
+                    </div>
+                </div>
+                <h5>✗ DON'T</h5>
+                <p>Rotate, skew, or distort the logo</p>
+            </div>
+        </div>
+
+        <div class="do-dont" style="margin-top: 30px;">
+            <div class="do-item">
+                <div class="icon">
+                    <div style="background: white; padding: 30px; border-radius: 12px;">
+                        <div class="logo-primary" style="transform: scale(0.4);">
+                            <div class="logo-icon"></div>
+                            <div class="logo-text">
+                                <span class="brand-name" style="font-size: 48px;">BitPro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5>✓ DO</h5>
+                <p>Maintain clear space around logo</p>
+            </div>
+            <div class="dont-item">
+                <div class="icon">
+                    <div style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); padding: 30px; border-radius: 12px;">
+                        <div class="logo-primary" style="transform: scale(0.4);">
+                            <div class="logo-icon"></div>
+                            <div class="logo-text">
+                                <span class="brand-name" style="font-size: 48px; color: white;">BitPro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5>✗ DON'T</h5>
+                <p>Place on busy or low-contrast backgrounds</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Applications -->
+    <div class="section section-dark">
+        <h2 class="section-title">Brand Applications</h2>
+        <p class="section-subtitle">Consistent application across all brand touchpoints.</p>
+        
+        <div class="app-showcase">
+            <div class="app-item">
+                <div class="app-preview">
+                    <div class="business-card">
+                        <div>
+                            <div class="logo-mini"></div>
+                        </div>
+                        <div class="business-card-info">
+                            <h5>Your Name</h5>
+                            <p>Position Title</p>
+                            <div class="business-card-contact" style="margin-top: 20px;">
+                                +966 XX XXX XXXX<br>
+                                email@bitproglobal.com<br>
+                                www.bitproglobal.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-info">
+                    <h4>Business Card</h4>
+                    <p>Professional business cards with gradient background and white text</p>
+                </div>
+            </div>
+
+            <div class="app-item">
+                <div class="app-preview" style="padding: 60px 40px;">
+                    <div style="width: 100%; background: white; padding: 60px 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <div class="logo-primary" style="transform: scale(0.5); transform-origin: top left; margin-bottom: 40px;">
+                            <div class="logo-icon" style="width: 60px; height: 60px; border-radius: 12px;"></div>
+                            <div class="logo-text">
+                                <span class="brand-name" style="font-size: 36px;">BitPro</span>
+                                <span class="tagline" style="font-size: 11px;">GLOBAL SOFTWARE</span>
+                            </div>
+                        </div>
+                        <div style="height: 2px; background: #1e4d5f; margin: 30px 0;"></div>
+                        <div style="color: #666; font-size: 12px; line-height: 1.8;">
+                            <div style="margin-bottom: 20px;">
+                                <strong style="color: #1e4d5f;">BitPro Global Software</strong><br>
+                                Address Line 1<br>
+                                City, Country
+                            </div>
+                            <div>
+                                Tel: +966 XX XXX XXXX<br>
+                                Email: info@bitproglobal.com<br>
+                                Web: www.bitproglobal.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-info">
+                    <h4>Letterhead</h4>
+                    <p>Professional letterhead design for official correspondence</p>
+                </div>
+            </div>
+
+            <div class="app-item">
+                <div class="app-preview">
+                    <div style="width: 280px; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+                        <div style="background: linear-gradient(135deg, #1e4d5f 0%, #2d7a92 100%); padding: 60px 30px; text-align: center; color: white;">
+                            <div class="logo-icon-white" style="width: 80px; height: 80px; border-radius: 16px; margin: 0 auto 20px;"></div>
+                            <h4 style="font-size: 32px; margin-bottom: 8px;">BitPro</h4>
+                            <p style="font-size: 11px; letter-spacing: 2px; opacity: 0.9;">GLOBAL SOFTWARE</p>
+                        </div>
+                        <div style="padding: 30px;">
+                            <p style="font-size: 13px; color: #666; line-height: 1.8; text-align: center;">
+                                Complete Business Management Platform<br>
+                                <span style="font-size: 11px; color: #999;">POS • ERP • Assets • Inventory</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-info">
+                    <h4>Social Media Profile</h4>
+                    <p>Platform overview for social media</p>
+                </div>
+            </div>
+
+            <div class="app-item">
+                <div class="app-preview" style="background: #1e4d5f;">
+                    <div style="width: 100%; max-width: 350px; text-align: center; color: white; padding: 40px;">
+                        <div class="logo-icon-white" style="width: 100px; height: 100px; border-radius: 20px; margin: 0 auto 30px;"></div>
+                        <h3 style="font-size: 48px; margin-bottom: 12px;">BitPro</h3>
+                        <p style="font-size: 14px; letter-spacing: 3px; opacity: 0.9; margin-bottom: 8px;">GLOBAL SOFTWARE</p>
+                        <p style="font-size: 12px; opacity: 0.8; margin-bottom: 30px; line-height: 1.6;">POS • ERP • Asset Management<br>Complete Business Platform</p>
+                        <div style="background: white; color: #1e4d5f; padding: 16px 32px; border-radius: 8px; display: inline-block; font-weight: 600;">
+                            Get Started
+                        </div>
+                    </div>
+                </div>
+                <div class="app-info">
+                    <h4>Email Signature</h4>
+                    <p>Professional email signature with product suite</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Voice -->
+    <div class="section">
+        <h2 class="section-title">Brand Voice & Messaging</h2>
+        <p class="section-subtitle">How BitPro communicates with the world.</p>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>Brand Personality</h3>
+                <p><strong>Comprehensive</strong> - We provide complete business solutions, not just tools<br><br>
+                <strong>Integrated</strong> - Everything works together seamlessly<br><br>
+                <strong>Professional</strong> - Enterprise-grade quality for serious businesses<br><br>
+                <strong>Compliant</strong> - Built for Middle East regulations and standards<br><br>
+                <strong>Reliable</strong> - Mission-critical systems businesses depend on<br><br>
+                <strong>Accessible</strong> - Powerful features, intuitive interfaces</p>
+            </div>
+            <div class="card">
+                <h3>Tone of Voice</h3>
+                <p><strong>Expert & Authoritative</strong> - We know business management inside out<br><br>
+                <strong>Clear & Technical</strong> - Precise language for professional users<br><br>
+                <strong>Solution-Focused</strong> - From POS to ERP, we solve real business challenges<br><br>
+                <strong>Regional Expertise</strong> - Understanding Middle East business needs<br><br>
+                <strong>Supportive</strong> - Your partner in business growth</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 40px;">
+            <h3>Key Messages</h3>
+            <div class="grid grid-3" style="margin-top: 20px;">
+                <div>
+                    <p><strong style="color: #1e4d5f;">Tagline Options:</strong></p>
+                    <p style="margin-top: 12px; line-height: 2;">
+                        "Complete Business Management Suite"<br>
+                        "From POS to ERP, All-in-One"<br>
+                        "Your Complete Business Platform"<br>
+                        "Integrated Business Excellence"<br>
+                        "One Platform, Every Solution"
+                    </p>
+                </div>
+                <div>
+                    <p><strong style="color: #1e4d5f;">Core Capabilities:</strong></p>
+                    <p style="margin-top: 12px; line-height: 2;">
+                        POS & Sales Management<br>
+                        ERP & Operations<br>
+                        Asset Tracking & Management<br>
+                        Inventory Control<br>
+                        Financial Reporting & Compliance<br>
+                        HR & Employee Management
+                    </p>
+                </div>
+                <div>
+                    <p><strong style="color: #1e4d5f;">Key Differentiators:</strong></p>
+                    <p style="margin-top: 12px; line-height: 2;">
+                        ZATCA e-invoicing ready<br>
+                        Arabic/English bilingual<br>
+                        Saudi tax compliance<br>
+                        Firebase cloud integration<br>
+                        Desktop & web platforms<br>
+                        Thermal printing support
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Digital Guidelines -->
+    <div class="section section-dark">
+        <h2 class="section-title">Digital Guidelines</h2>
+        <p class="section-subtitle">Standards for digital applications and online presence.</p>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>Website Design</h3>
+                <p><strong>Color Usage:</strong> Primary brand colors with white/light gray backgrounds<br><br>
+                <strong>Typography:</strong> Inter for all text, headings in Bold/Semibold<br><br>
+                <strong>Layout:</strong> Clean, spacious layouts with generous whitespace<br><br>
+                <strong>Imagery:</strong> Professional business photos, avoid stock imagery clichés<br><br>
+                <strong>Buttons:</strong> Primary actions in Deep Teal (#1e4d5f), 8-12px border radius</p>
+            </div>
+            <div class="card">
+                <h3>UI Components</h3>
+                <p><strong>Cards:</strong> White background, 16px border radius, subtle shadows<br><br>
+                <strong>Forms:</strong> Clean inputs with 8px border radius, focus states in Sky Blue<br><br>
+                <strong>Icons:</strong> Line style, 2px stroke weight, match brand colors<br><br>
+                <strong>Spacing:</strong> 8px base unit, multiples of 8 for consistency<br><br>
+                <strong>Animations:</strong> Subtle, purposeful, 200-300ms duration</p>
+            </div>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 40px;">
+            <div class="card">
+                <h3>Social Media</h3>
+                <p><strong>Profile Image:</strong> Icon-only logo<br>
+                <strong>Cover Images:</strong> Brand gradient with key message<br>
+                <strong>Post Graphics:</strong> Consistent templates using brand colors<br>
+                <strong>Hashtags:</strong> #BitPro #POSSoftware #ERPSystem #BusinessManagement #AssetManagement #ZATCACompliant</p>
+            </div>
+            <div class="card">
+                <h3>Email Marketing</h3>
+                <p><strong>Header:</strong> Logo centered or left-aligned<br>
+                <strong>Colors:</strong> Use brand palette consistently<br>
+                <strong>CTA Buttons:</strong> Deep Teal with white text<br>
+                <strong>Footer:</strong> Contact info, social links, legal text</p>
+            </div>
+            <div class="card">
+                <h3>Mobile Apps</h3>
+                <p><strong>App Icon:</strong> Icon-only version with gradient background<br>
+                <strong>Splash Screen:</strong> Centered logo on white/brand color<br>
+                <strong>Navigation:</strong> Bottom or side nav with icon-only logo<br>
+                <strong>Gestures:</strong> Standard iOS/Android patterns</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Guidelines -->
+    <div class="section">
+        <h2 class="section-title">Print Guidelines</h2>
+        <p class="section-subtitle">Standards for physical brand materials.</p>
+        
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>Business Collateral</h3>
+                <p><strong>Brochures:</strong> A4/Letter size, full bleed<br>
+                <strong>Flyers:</strong> High-quality paper stock<br>
+                <strong>Folders:</strong> Matte finish with logo on front<br>
+                <strong>Color Mode:</strong> CMYK for all print materials</p>
+            </div>
+            <div class="card">
+                <h3>Stationery</h3>
+                <p><strong>Business Cards:</strong> 85mm × 55mm, 350gsm<br>
+                <strong>Letterhead:</strong> A4 with header logo and footer contact<br>
+                <strong>Envelopes:</strong> DL or C4 with logo<br>
+                <strong>Notepads:</strong> A4/A5 with subtle header branding</p>
+            </div>
+            <div class="card">
+                <h3>Large Format</h3>
+                <p><strong>Banners:</strong> High-res logo, minimum 300 DPI<br>
+                <strong>Posters:</strong> Bold headlines, key messages<br>
+                <strong>Signage:</strong> Clear space guidelines strictly followed<br>
+                <strong>Trade Show:</strong> Consistent brand presence</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section section-dark">
+        <h2 class="section-title">Brand Assets & Contact</h2>
+        <p class="section-subtitle">For questions about brand guidelines or to request brand assets.</p>
+        
+        <div class="card">
+            <h3>Available Brand Assets</h3>
+            <div class="grid grid-3" style="margin-top: 20px;">
+                <div>
+                    <p><strong style="color: #1e4d5f;">Logo Files</strong></p>
+                    <p style="margin-top: 12px; color: #666; font-size: 14px;">
+                        • SVG (scalable vector)<br>
+                        • PNG (transparent)<br>
+                        • AI/EPS (Adobe)<br>
+                        • PDF (print-ready)
+                    </p>
+                </div>
+                <div>
+                    <p><strong style="color: #1e4d5f;">Templates</strong></p>
+                    <p style="margin-top: 12px; color: #666; font-size: 14px;">
+                        • Business cards<br>
+                        • Letterhead<br>
+                        • Presentation slides<br>
+                        • Social media graphics
+                    </p>
+                </div>
+                <div>
+                    <p><strong style="color: #1e4d5f;">Contact</strong></p>
+                    <p style="margin-top: 12px; color: #666; font-size: 14px;">
+                        Email: info@bitproglobal.com<br>
+                        Web: www.bitproglobal.com<br>
+                        For brand asset requests<br>
+                        and usage questions
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 2px solid #e0e0e0;">
+            <div class="logo-primary" style="justify-content: center; margin-bottom: 20px;">
+                <div class="logo-icon" style="width: 60px; height: 60px; border-radius: 12px;"></div>
+                <div class="logo-text">
+                    <span class="brand-name" style="font-size: 36px;">BitPro</span>
+                    <span class="tagline" style="font-size: 11px;">GLOBAL SOFTWARE</span>
+                </div>
+            </div>
+            <p style="color: #666; font-size: 14px;">© 2025 BitPro Global Software. All rights reserved.</p>
+            <p style="color: #999; font-size: 12px; margin-top: 8px;">Brand Identity Guidelines v1.0</p>
+        </div>
+    </div>
+
+</body>
+</html>
