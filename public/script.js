@@ -9,13 +9,15 @@ function toggleMobileMenu() {
 // Close mobile menu when clicking on a link
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLinks = mobileMenu.querySelectorAll('a');
+    if (mobileMenu) {
+        const mobileLinks = mobileMenu.querySelectorAll('a');
 
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
         });
-    });
+    }
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -27,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth',
                     block: 'start'
                 });
+                // Close mobile menu after clicking
+                if (mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                }
             }
         });
     });
@@ -47,27 +53,98 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScroll = currentScroll;
     });
 
-    // Add animation on scroll for cards
+    // Enhanced scroll animations
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('animate-in');
             }
         });
     }, observerOptions);
 
-    // Observe all cards
-    document.querySelectorAll('.feature-card, .zatca-card, .stat-item').forEach(card => {
+    // Observe cards with staggered animation
+    const cards = document.querySelectorAll('.feature-card, .zatca-card, .zatca-badge');
+    cards.forEach((card, index) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
         observer.observe(card);
+    });
+
+    // Add "animate-in" styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .animate-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Animate stats on scroll
+    const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumber = entry.target.querySelector('.stat-number');
+                if (statNumber && !statNumber.classList.contains('counted')) {
+                    statNumber.classList.add('counted');
+                    animateValue(statNumber);
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-item').forEach(item => {
+        statsObserver.observe(item);
+    });
+
+    // Animate number counting
+    function animateValue(element) {
+        const text = element.textContent;
+        const hasPlus = text.includes('+');
+        const hasPercent = text.includes('%');
+        const number = parseInt(text.replace(/\D/g, ''));
+
+        if (isNaN(number)) return;
+
+        const duration = 2000;
+        const frameDuration = 1000 / 60;
+        const totalFrames = Math.round(duration / frameDuration);
+        let frame = 0;
+
+        const counter = setInterval(() => {
+            frame++;
+            const progress = frame / totalFrames;
+            const currentNumber = Math.round(number * progress);
+
+            let displayText = currentNumber.toString();
+            if (hasPlus) displayText += '+';
+            if (hasPercent) displayText += '%';
+            if (text.includes('/')) displayText = '24/7';
+
+            element.textContent = displayText;
+
+            if (frame === totalFrames) {
+                clearInterval(counter);
+                element.textContent = text;
+            }
+        }, frameDuration);
+    }
+
+    // Parallax effect for decorative elements
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.hero::before, .hero::after');
+
+        parallaxElements.forEach((element, index) => {
+            const speed = (index + 1) * 0.5;
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
     });
 });
 
