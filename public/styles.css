@@ -191,6 +191,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .badge {
@@ -461,6 +463,8 @@ section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .feature-card {
@@ -724,21 +728,19 @@ section {
     overflow: hidden;
 }
 
-/* SVG Background Illustrations */
-.hero-bg-illustration {
+/* Decorative Images */
+.hero-decorative-img {
     position: absolute;
     top: 0;
     right: 0;
     width: 50%;
     height: 100%;
-    opacity: 0.6;
+    object-fit: cover;
+    object-position: right center;
+    opacity: 0.9;
     pointer-events: none;
+    z-index: 1;
     animation: float 8s ease-in-out infinite;
-}
-
-.hero-bg-illustration svg {
-    width: 100%;
-    height: 100%;
 }
 
 .hero::before {
@@ -819,22 +821,19 @@ section {
     overflow: hidden;
 }
 
-.features-bg-illustration {
+.features-decorative-img {
     position: absolute;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    width: 60%;
-    max-width: 700px;
-    height: auto;
-    opacity: 0.5;
+    width: 50%;
+    height: 70%;
+    object-fit: cover;
+    object-position: right center;
+    opacity: 0.9;
     pointer-events: none;
+    z-index: 1;
     animation: float 10s ease-in-out infinite;
-}
-
-.features-bg-illustration svg {
-    width: 100%;
-    height: auto;
 }
 
 .features::before {
