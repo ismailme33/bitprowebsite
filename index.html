@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitPro Global Software - Complete Business Management Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-icon-nav {
+            width: 50px;
+            height: 50px;
+            background: #1e4d5f;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .logo-icon-nav::before {
+            content: '';
+            position: absolute;
+            width: 35%;
+            height: 35%;
+            background: white;
+            left: 20%;
+            top: 20%;
+            border-radius: 3px;
+        }
+
+        .logo-text-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text-nav .brand-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text-nav .tagline {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            margin-top: -3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2d7a92;
+        }
+
+        .nav-links a.active {
+            color: #1e4d5f;
+            font-weight: 600;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: 2px solid #1e4d5f;
+            background: white;
+            color: #1e4d5f;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: #1e4d5f;
+            color: white;
+        }
+
+        .lang-btn:hover {
+            background: #2d7a92;
+            border-color: #2d7a92;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #1e4d5f 0%, #2d7a92 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 90px;
+        }
+
+        .hero-content h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: white;
+            color: #1e4d5f;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1e4d5f;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 60px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Us Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            color: #1e4d5f;
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .stat-card .number {
+            font-size: 56px;
+            font-weight: 700;
+            color: #1e4d5f;
+            margin-bottom: 8px;
+        }
+
+        .stat-card .label {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .value-card .icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e4d5f 0%, #2d7a92 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .value-card h4 {
+            font-size: 20px;
+            color: #1e4d5f;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e4d5f 0%, #2d7a92 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            color: #1e4d5f;
+            margin-bottom: 16px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 60px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo .logo-nav {
+            margin-bottom: 20px;
+        }
+
+        .logo-icon-nav-white {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .logo-icon-nav-white::before {
+            content: '';
+            position: absolute;
+            width: 35%;
+            height: 35%;
+            background: #1e4d5f;
+            left: 20%;
+            top: 20%;
+            border-radius: 3px;
+        }
+
+        .footer-logo .brand-name {
+            color: white;
+        }
+
+        .footer-logo p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #4a9bb5;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                font-size: 14px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo-nav">
+                <div class="logo-icon-nav"></div>
+                <div class="logo-text-nav">
+                    <span class="brand-name">BitPro</span>
+                    <span class="tagline">GLOBAL SOFTWARE</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                <a href="#products" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                <a href="bitpro_brand_guide.html" data-en="Brand Guide" data-ar="دليل العلامة">Brand Guide</a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 data-en="Complete Business Management Platform" data-ar="منصة إدارة الأعمال المتكاملة">Complete Business Management Platform</h1>
+            <p data-en="From POS to ERP, Asset Management to Inventory Control - All in One Integrated Solution" data-ar="من نقاط البيع إلى تخطيط موارد المؤسسات، من إدارة الأصول إلى مراقبة المخزون - كل شيء في حل متكامل واحد">From POS to ERP, Asset Management to Inventory Control - All in One Integrated Solution</p>
+            <a href="about.html" class="cta-button" data-en="Learn More" data-ar="تعرف على المزيد">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+        <h2 class="section-title" data-en="About BitPro Global Software" data-ar="عن بت برو للبرمجيات العالمية">About BitPro Global Software</h2>
+        <p class="section-subtitle" data-en="Empowering businesses with comprehensive, integrated solutions designed for the modern enterprise" data-ar="تمكين الشركات بحلول شاملة ومتكاملة مصممة للمؤسسات الحديثة">Empowering businesses with comprehensive, integrated solutions designed for the modern enterprise</p>
+
+        <div class="about-content">
+            <div class="about-text">
+                <h3 data-en="Who We Are" data-ar="من نحن">Who We Are</h3>
+                <p data-en="BitPro Global Software is a leading provider of comprehensive business management solutions, specializing in integrated POS, ERP, Asset Management, and Inventory Control systems. We serve businesses across the Middle East and beyond, with a focus on delivering enterprise-grade software that meets regional compliance requirements." data-ar="بت برو للبرمجيات العالمية هي مزود رائد لحلول إدارة الأعمال الشاملة، متخصصة في أنظمة نقاط البيع المتكاملة، وتخطيط موارد المؤسسات، وإدارة الأصول، ومراقبة المخزون. نخدم الشركات في جميع أنحاء الشرق الأوسط وخارجه، مع التركيز على تقديم برامج على مستوى المؤسسات تلبي متطلبات الامتثال الإقليمية.">BitPro Global Software is a leading provider of comprehensive business management solutions, specializing in integrated POS, ERP, Asset Management, and Inventory Control systems. We serve businesses across the Middle East and beyond, with a focus on delivering enterprise-grade software that meets regional compliance requirements.</p>
+
+                <p data-en="Founded with a vision to streamline business operations, BitPro combines cutting-edge technology with deep understanding of Middle Eastern business practices. Our platform is designed to help businesses of all sizes manage their operations more efficiently, from point-of-sale transactions to comprehensive back-office management." data-ar="تأسست بت برو بهدف تبسيط العمليات التجارية، وتجمع بين التكنولوجيا المتقدمة والفهم العميق لممارسات الأعمال في الشرق الأوسط. تم تصميم منصتنا لمساعدة الشركات من جميع الأحجام على إدارة عملياتها بكفاءة أكبر، من معاملات نقاط البيع إلى الإدارة الشاملة للمكاتب الخلفية.">Founded with a vision to streamline business operations, BitPro combines cutting-edge technology with deep understanding of Middle Eastern business practices. Our platform is designed to help businesses of all sizes manage their operations more efficiently, from point-of-sale transactions to comprehensive back-office management.</p>
+            </div>
+
+            <div class="about-text">
+                <h3 data-en="Our Mission" data-ar="مهمتنا">Our Mission</h3>
+                <p data-en="To empower businesses with an integrated, intelligent platform that unifies POS, ERP, asset tracking, inventory management, and financial operations into one seamless solution. We are committed to providing enterprise-grade software that is both powerful and user-friendly, ensuring compliance with regional regulations while enabling businesses to scale and grow." data-ar="تمكين الشركات بمنصة متكاملة وذكية توحد نقاط البيع، وتخطيط موارد المؤسسات، وتتبع الأصول، وإدارة المخزون، والعمليات المالية في حل سلس واحد. نحن ملتزمون بتوفير برامج على مستوى المؤسسات قوية وسهلة الاستخدام، مع ضمان الامتثال للوائح الإقليمية مع تمكين الشركات من التوسع والنمو.">To empower businesses with an integrated, intelligent platform that unifies POS, ERP, asset tracking, inventory management, and financial operations into one seamless solution. We are committed to providing enterprise-grade software that is both powerful and user-friendly, ensuring compliance with regional regulations while enabling businesses to scale and grow.</p>
+
+                <h3 data-en="Why Choose BitPro?" data-ar="لماذا تختار بت برو؟" style="margin-top: 30px;">Why Choose BitPro?</h3>
+                <p data-en="We understand the unique challenges businesses face in the Middle East. Our software is fully bilingual (Arabic/English), ZATCA e-invoicing compliant, and designed with Saudi tax compliance in mind. With features like thermal printing support, cloud integration via Firebase, and comprehensive reporting capabilities, BitPro provides everything you need to run your business efficiently and in compliance with local regulations." data-ar="نحن نفهم التحديات الفريدة التي تواجهها الشركات في الشرق الأوسط. برنامجنا ثنائي اللغة بالكامل (العربية / الإنجليزية)، متوافق مع الفوترة الإلكترونية ZATCA، ومصمم مع مراعاة الامتثال الضريبي السعودي. مع ميزات مثل دعم الطباعة الحرارية، والتكامل السحابي عبر Firebase، وقدرات الإبلاغ الشاملة، توفر بت برو كل ما تحتاجه لإدارة عملك بكفاءة وامتثال للوائح المحلية.">We understand the unique challenges businesses face in the Middle East. Our software is fully bilingual (Arabic/English), ZATCA e-invoicing compliant, and designed with Saudi tax compliance in mind. With features like thermal printing support, cloud integration via Firebase, and comprehensive reporting capabilities, BitPro provides everything you need to run your business efficiently and in compliance with local regulations.</p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="about-stats">
+            <div class="stat-card">
+                <div class="number">8+</div>
+                <div class="label" data-en="Integrated Modules" data-ar="وحدات متكاملة">Integrated Modules</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">100%</div>
+                <div class="label" data-en="ZATCA Compliant" data-ar="متوافق مع زاتكا">ZATCA Compliant</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">24/7</div>
+                <div class="label" data-en="Support Available" data-ar="الدعم متاح">Support Available</div>
+            </div>
+        </div>
+
+        <!-- Values -->
+        <h2 class="section-title" style="margin-top: 80px;" data-en="Our Core Values" data-ar="قيمنا الأساسية">Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="icon">C</div>
+                <h4 data-en="Comprehensive" data-ar="شامل">Comprehensive</h4>
+                <p data-en="Complete business solutions, not just individual tools" data-ar="حلول عمل كاملة، وليس مجرد أدوات فردية">Complete business solutions, not just individual tools</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">I</div>
+                <h4 data-en="Integrated" data-ar="متكامل">Integrated</h4>
+                <p data-en="Everything works together seamlessly in one platform" data-ar="كل شيء يعمل معًا بسلاسة في منصة واحدة">Everything works together seamlessly in one platform</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">P</div>
+                <h4 data-en="Professional" data-ar="احترافي">Professional</h4>
+                <p data-en="Enterprise-grade quality for serious businesses" data-ar="جودة على مستوى المؤسسات للأعمال الجادة">Enterprise-grade quality for serious businesses</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">R</div>
+                <h4 data-en="Reliable" data-ar="موثوق">Reliable</h4>
+                <p data-en="Mission-critical systems businesses depend on" data-ar="أنظمة حيوية تعتمد عليها الشركات">Mission-critical systems businesses depend on</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">C</div>
+                <h4 data-en="Compliant" data-ar="متوافق">Compliant</h4>
+                <p data-en="Built for Middle East regulations and standards" data-ar="مصمم للوائح ومعايير الشرق الأوسط">Built for Middle East regulations and standards</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">I</div>
+                <h4 data-en="Innovative" data-ar="مبتكر">Innovative</h4>
+                <p data-en="Cutting-edge technology for modern businesses" data-ar="تكنولوجيا متطورة للشركات الحديثة">Cutting-edge technology for modern businesses</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">U</div>
+                <h4 data-en="User-Focused" data-ar="تركيز على المستخدم">User-Focused</h4>
+                <p data-en="Intuitive interfaces designed for efficiency" data-ar="واجهات بديهية مصممة للكفاءة">Intuitive interfaces designed for efficiency</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">E</div>
+                <h4 data-en="Enterprise-Grade" data-ar="مستوى المؤسسات">Enterprise-Grade</h4>
+                <p data-en="Scalable solutions that grow with your business" data-ar="حلول قابلة للتوسع تنمو مع عملك">Scalable solutions that grow with your business</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section section-dark">
+        <h2 class="section-title" data-en="Our Product Suite" data-ar="مجموعة منتجاتنا">Our Product Suite</h2>
+        <p class="section-subtitle" data-en="A complete ecosystem of integrated business management solutions" data-ar="نظام بيئي كامل من حلول إدارة الأعمال المتكاملة">A complete ecosystem of integrated business management solutions</p>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">P</div>
+                <h3 data-en="POS System" data-ar="نظام نقاط البيع">POS System</h3>
+                <p data-en="Advanced point-of-sale with Arabic/English support, thermal printing, ZATCA e-invoicing compliance, and multi-payment methods." data-ar="نقطة بيع متقدمة مع دعم العربية / الإنجليزية، الطباعة الحرارية، الامتثال للفوترة الإلكترونية ZATCA، وطرق الدفع المتعددة.">Advanced point-of-sale with Arabic/English support, thermal printing, ZATCA e-invoicing compliance, and multi-payment methods.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">E</div>
+                <h3 data-en="ERP System" data-ar="نظام تخطيط الموارد">ERP System</h3>
+                <p data-en="Enterprise resource planning covering sales, purchases, inventory, accounting, HR, and comprehensive financial reporting." data-ar="تخطيط موارد المؤسسات يغطي المبيعات والمشتريات والمخزون والمحاسبة والموارد البشرية والتقارير المالية الشاملة.">Enterprise resource planning covering sales, purchases, inventory, accounting, HR, and comprehensive financial reporting.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">A</div>
+                <h3 data-en="Asset Management" data-ar="إدارة الأصول">Asset Management</h3>
+                <p data-en="Complete asset tracking with device receipts, maintenance schedules, depreciation, and Excel import capabilities." data-ar="تتبع كامل للأصول مع إيصالات الأجهزة، جداول الصيانة، الاستهلاك، وإمكانيات استيراد Excel.">Complete asset tracking with device receipts, maintenance schedules, depreciation, and Excel import capabilities.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">I</div>
+                <h3 data-en="Inventory Management" data-ar="إدارة المخزون">Inventory Management</h3>
+                <p data-en="Real-time inventory tracking, barcode integration, stock alerts, transfers, and comprehensive product management." data-ar="تتبع المخزون في الوقت الفعلي، تكامل الباركود، تنبيهات المخزون، التحويلات، وإدارة المنتجات الشاملة.">Real-time inventory tracking, barcode integration, stock alerts, transfers, and comprehensive product management.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">C</div>
+                <h3 data-en="Customer Management" data-ar="إدارة العملاء">Customer Management</h3>
+                <p data-en="CRM with customer profiles, purchase history, loyalty programs, and activity tracking." data-ar="إدارة علاقات العملاء مع ملفات تعريف العملاء، سجل الشراء، برامج الولاء، وتتبع النشاط.">CRM with customer profiles, purchase history, loyalty programs, and activity tracking.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">V</div>
+                <h3 data-en="Vendor Management" data-ar="إدارة الموردين">Vendor Management</h3>
+                <p data-en="Supplier database, purchase orders, payment tracking, and vendor performance analytics." data-ar="قاعدة بيانات الموردين، أوامر الشراء، تتبع المدفوعات، وتحليلات أداء الموردين.">Supplier database, purchase orders, payment tracking, and vendor performance analytics.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">F</div>
+                <h3 data-en="Financial Reporting" data-ar="التقارير المالية">Financial Reporting</h3>
+                <p data-en="Comprehensive reports, profit/loss statements, tax compliance, ZATCA integration, and real-time analytics." data-ar="تقارير شاملة، بيانات الربح والخسارة، الامتثال الضريبي، تكامل ZATCA، والتحليلات في الوقت الفعلي.">Comprehensive reports, profit/loss statements, tax compliance, ZATCA integration, and real-time analytics.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">E</div>
+                <h3 data-en="Employee Management" data-ar="إدارة الموظفين">Employee Management</h3>
+                <p data-en="HR module with employee records, attendance, payroll integration, and performance tracking." data-ar="وحدة الموارد البشرية مع سجلات الموظفين، الحضور، تكامل كشوف المرتبات، وتتبع الأداء.">HR module with employee records, attendance, payroll integration, and performance tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h2>
+        <p class="section-subtitle" data-en="Ready to transform your business operations? Contact us today to learn more about BitPro" data-ar="هل أنت مستعد لتحويل عمليات عملك؟ اتصل بنا اليوم لمعرفة المزيد عن بت برو">Ready to transform your business operations? Contact us today to learn more about BitPro</p>
+
+        <div class="about-stats">
+            <div class="stat-card">
+                <h4 style="color: #1e4d5f; margin-bottom: 16px;" data-en="Email" data-ar="البريد الإلكتروني">Email</h4>
+                <p style="color: #666;">info@bitproglobal.com</p>
+            </div>
+            <div class="stat-card">
+                <h4 style="color: #1e4d5f; margin-bottom: 16px;" data-en="Website" data-ar="الموقع الإلكتروني">Website</h4>
+                <p style="color: #666;">www.bitproglobal.com</p>
+            </div>
+            <div class="stat-card">
+                <h4 style="color: #1e4d5f; margin-bottom: 16px;" data-en="Support" data-ar="الدعم">Support</h4>
+                <p style="color: #666;">24/7 Available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-nav" style="margin-bottom: 20px;">
+                    <div class="logo-icon-nav-white"></div>
+                    <div class="logo-text-nav">
+                        <span class="brand-name">BitPro</span>
+                        <span class="tagline">GLOBAL SOFTWARE</span>
+                    </div>
+                </div>
+                <p data-en="Complete Business Management Platform for modern enterprises. From POS to ERP, we provide integrated solutions for your business success." data-ar="منصة إدارة الأعمال المتكاملة للمؤسسات الحديثة. من نقاط البيع إلى تخطيط موارد المؤسسات، نقدم حلولاً متكاملة لنجاح عملك.">Complete Business Management Platform for modern enterprises. From POS to ERP, we provide integrated solutions for your business success.</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-en="Products" data-ar="المنتجات">Products</h4>
+                <ul>
+                    <li><a href="#" data-en="POS System" data-ar="نظام نقاط البيع">POS System</a></li>
+                    <li><a href="#" data-en="ERP System" data-ar="نظام تخطيط الموارد">ERP System</a></li>
+                    <li><a href="#" data-en="Asset Management" data-ar="إدارة الأصول">Asset Management</a></li>
+                    <li><a href="#" data-en="Inventory Control" data-ar="مراقبة المخزون">Inventory Control</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-en="Company" data-ar="الشركة">Company</h4>
+                <ul>
+                    <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
+                    <li><a href="bitpro_brand_guide.html" data-en="Brand Guide" data-ar="دليل العلامة">Brand Guide</a></li>
+                    <li><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                    <li><a href="#" data-en="Careers" data-ar="الوظائف">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-en="Support" data-ar="الدعم">Support</h4>
+                <ul>
+                    <li><a href="#" data-en="Documentation" data-ar="التوثيق">Documentation</a></li>
+                    <li><a href="#" data-en="Help Center" data-ar="مركز المساعدة">Help Center</a></li>
+                    <li><a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a></li>
+                    <li><a href="#" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-en="© 2025 BitPro Global Software. All rights reserved." data-ar="© 2025 بت برو للبرمجيات العالمية. جميع الحقوق محفوظة.">© 2025 BitPro Global Software. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLanguage = 'en'; // Default language is English
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update all elements with language data attributes
+            document.querySelectorAll('[data-en][data-ar]').forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+
+            // Update document direction for Arabic
+            if (lang === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', 'en');
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Initialize with English as default
+        window.addEventListener('DOMContentLoaded', () => {
+            switchLanguage('en');
+        });
+    </script>
+
+</body>
+</html>
